@@ -6,24 +6,6 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { TypewriterEffect } from "./ui/TypeWriterEffect";
 
 const Hero = () => {
-  const words = [
-    {
-      text: "software developer ",
-    },
-    {
-      text: "animator ",
-    },
-    {
-      text: "student ",
-    },
-    {
-      text: "designer ",
-    },
-    {
-      text: "Sophia!",
-      className: "text-blue-500 dark:text-blue-500",
-    },
-  ];
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -62,11 +44,16 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Hi, I'm Sophia!"
+            words="Hi, welcome to my portfolio!"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          <TypewriterEffect words={words} />
+          <TypewriterEffect
+            prefix="I'm "
+            wordArray={["a software developer", "an animator", "a computer science student", "Sophia!"]}
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            cursorClassName="bg-blue-500"
+          />
 
           {/* <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2l">
             Hi! I&apos;m Sophia, a CS student.
