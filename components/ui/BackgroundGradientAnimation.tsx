@@ -11,11 +11,11 @@ export const BackgroundGradientAnimation = ({
     fourthColor = "144, 181, 204",
     fifthColor = "162, 190, 206",
     pointerColor = "136, 173, 194",
-    size = "40%",
-    blendingValue = "soft-light",
+    size = "50%",
+    blendingValue = "hard-light",
     children,
     className,
-    interactive = true,
+    interactive = false,
     containerClassName,
 }: {
     gradientBackgroundStart?: string;
