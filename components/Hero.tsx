@@ -2,13 +2,16 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { TypeWriterEffectSmooth } from "./ui/TypeWriterEffect";
+import { TypeWriterEffect } from "./ui/TypeWriterEffect";
 
 const Hero = () => {
   const words = [
-    { text: "a software developer" },
-    { text: "an animator" },
-    { text: "Sophia!", className: "text-blue-300" },
+    { text: "a software developer " },
+    { text: "an animator " },
+    { text: "a computer science student " },
+    { text: "a designer " },
+    { text: "a gamer " },
+    { text: "Sophia! ", className: "text-blue-300" },
   ];
 
   return (
@@ -44,12 +47,11 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          {/* TypeWriterEffectSmooth with extracted word texts */}
-          <TypeWriterEffectSmooth
+          <TypeWriterEffect
             prefix="I'm "
-            words={words.map((word) => word.text)} // Extract text values
+            words={words.map((word) => word.text)}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            cursorClassName="bg-blue-500"
+            cursorClassName="bg-blue-600"
           />
 
           <a href="#about">

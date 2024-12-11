@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export const TypeWriterEffectSmooth = ({
+export const TypeWriterEffect = ({
     words,
     prefix = "I'm a",
     className,
@@ -20,8 +20,8 @@ export const TypeWriterEffectSmooth = ({
     const [typing, setTyping] = useState(true);
     const [wordIndex, setWordIndex] = useState(0);
 
-    const typeDelay = 100;
-    const deleteDelay = 50;
+    const typeDelay = 50;
+    const deleteDelay = 40;
     const pauseBetweenWords = 1500;
 
     useEffect(() => {
@@ -64,7 +64,7 @@ export const TypeWriterEffectSmooth = ({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
                 className={cn(
-                    "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
+                    "inline-block rounded-sm w-[6px] h-10 md:h-12 lg:h-14 bg-blue-500",
                     cursorClassName
                 )}
             ></motion.span>
