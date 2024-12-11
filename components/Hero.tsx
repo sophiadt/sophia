@@ -57,6 +57,8 @@ const Hero = () => {
             cursorClassName="bg-blue-600"
           />
 
+          <img src="/kitty.png" alt="Kitty" className="w-11" />
+
           {/* <a href="#about">
             <MagicButton
               title="Show my work"
