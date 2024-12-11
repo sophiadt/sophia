@@ -20,8 +20,8 @@ export const TypeWriterEffect = ({
     const [wordIndex, setWordIndex] = useState(0); // Track the word index
     const [prefixTyped, setPrefixTyped] = useState(false); // If prefix is fully typed
 
-    const typeDelay = 45;
-    const deleteDelay = 35;
+    const typeDelay = 50;
+    const deleteDelay = 40;
     const pauseBetweenWords = 1500;
 
     useEffect(() => {
