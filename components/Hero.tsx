@@ -11,7 +11,7 @@ const Hero = () => {
     { text: "an animator " },
     { text: "a computer science student " },
     { text: "a designer " },
-    { text: "a gamer 🎮 " },
+    { text: "a gamer :D " },
   ];
 
   return (
