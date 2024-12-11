@@ -20,8 +20,8 @@ export const TypeWriterEffect = ({
     const [wordIndex, setWordIndex] = useState(0);
     const [prefixTyped, setPrefixTyped] = useState(false); // Track if prefix is typed
 
-    const typeDelay = 50;
-    const deleteDelay = 40;
+    const typeDelay = 45;
+    const deleteDelay = 35;
     const pauseBetweenWords = 1500;
 
     useEffect(() => {
@@ -79,7 +79,11 @@ export const TypeWriterEffect = ({
             >
                 <motion.span>
                     {prefix}
-                    <span className={cn("sm:text-base md:text-xl lg:text-3xl xl:text-5xl", wordToDisplay.className)}>
+                    <span
+                        className={cn("sm:text-base md:text-xl lg:text-3xl xl:text-5xl", wordToDisplay.className)}
+                        style={{
+                            whiteSpace: "nowrap",
+                        }}>
                         {currentText.slice(prefix.length)}
                     </span>
                 </motion.span>
