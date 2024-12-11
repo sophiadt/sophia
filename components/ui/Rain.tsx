@@ -18,50 +18,50 @@ export const Rain = ({
         {
             initialX: 10,
             translateX: 10,
-            duration: 4,
+            duration: 1.5,
             repeatDelay: 3,
             delay: 2,
         },
         {
             initialX: 600,
             translateX: 600,
-            duration: 3,
+            duration: 2,
             repeatDelay: 3,
-            delay: 4,
+            delay: 2,
         },
         {
             initialX: 100,
             translateX: 100,
-            duration: 2,
+            duration: 1.5,
             repeatDelay: 2,
             className: "h-6",
         },
         {
             initialX: 400,
             translateX: 400,
-            duration: 4,
+            duration: 1.75,
             repeatDelay: 3,
-            delay: 4,
+            delay: 2,
         },
         {
             initialX: 800,
             translateX: 800,
-            duration: 3,
+            duration: 1.25,
             repeatDelay: 2,
             className: "h-20",
         },
         {
             initialX: 1000,
             translateX: 1000,
-            duration: 4,
-            repeatDelay: 2,
+            duration: 2,
+            repeatDelay: 1,
             className: "h-12",
         },
         {
             initialX: 1200,
             translateX: 1200,
-            duration: 2,
-            repeatDelay: 4,
+            duration: 1.25,
+            repeatDelay: 1,
             delay: 2,
             className: "h-6",
         },
@@ -243,7 +243,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className={cn(
                     "absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r",
-                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-sm",
+                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[1px]",
                     "mix-blend-mode-overlay"
                 )}
             ></motion.div>
@@ -262,7 +262,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                     }}
                     className={cn(
                         "absolute h-1 w-1 rounded-full bg-gradient-to-b",
-                        "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-sm",
+                        "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[0.5px]",
                         "mix-blend-mode-overlay"
                     )}
                 />
