@@ -31,8 +31,9 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Image Section remains unaffected */}
-              <div className="flex-1 flex justify-center md:justify-end">
+              {/* Image Section */}
+              <div className="flex-1 flex flex-col items-center md:items-end space-y-4">
+                <img src="/cd.png" alt="CD" className="w-48 h-auto rounded-full" />
                 <img src="/kitty.png" alt="Kitty" className="w-48 h-auto rounded-lg" />
               </div>
             </div>
