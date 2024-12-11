@@ -15,10 +15,10 @@ export const TypeWriterEffect = ({
     className?: string;
     cursorClassName?: string;
 }) => {
-    const [currentWord, setCurrentWord] = useState("");
-    const [displayText, setDisplayText] = useState(prefix);
+    const [currentText, setCurrentText] = useState(""); // Combine prefix and current word
     const [typing, setTyping] = useState(true);
     const [wordIndex, setWordIndex] = useState(0);
+    const [prefixTyped, setPrefixTyped] = useState(false); // Track if prefix is typed
 
     const typeDelay = 50;
     const deleteDelay = 40;
@@ -28,17 +28,31 @@ export const TypeWriterEffect = ({
         let timeout: NodeJS.Timeout;
 
         if (typing) {
-            if (currentWord.length < words[wordIndex].length) {
-                timeout = setTimeout(() => {
-                    setCurrentWord((prev) => prev + words[wordIndex][prev.length]);
-                }, typeDelay);
+            if (!prefixTyped) {
+                // Type the prefix first
+                if (currentText.length < prefix.length) {
+                    timeout = setTimeout(() => {
+                        setCurrentText((prev) => prev + prefix[prev.length]);
+                    }, typeDelay);
+                } else {
+                    setPrefixTyped(true); // Once prefix is typed, stop typing it
+                    timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
+                }
             } else {
-                timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
+                // Type the current word after the prefix
+                if (currentText.length < prefix.length + words[wordIndex].length) {
+                    timeout = setTimeout(() => {
+                        setCurrentText((prev) => prev + words[wordIndex][prev.length - prefix.length]);
+                    }, typeDelay);
+                } else {
+                    timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
+                }
             }
         } else {
-            if (currentWord.length > 0) {
+            if (currentText.length > prefix.length) {
+                // Only delete the word, not the prefix
                 timeout = setTimeout(() => {
-                    setCurrentWord((prev) => prev.slice(0, -1));
+                    setCurrentText((prev) => prev.slice(0, -1));
                 }, deleteDelay);
             } else {
                 setTyping(true);
@@ -46,10 +60,8 @@ export const TypeWriterEffect = ({
             }
         }
 
-        setDisplayText(`${prefix} ${currentWord}`);
-
         return () => clearTimeout(timeout);
-    }, [currentWord, typing, words, wordIndex]);
+    }, [currentText, typing, words, wordIndex, prefix, prefixTyped]);
 
     return (
         <div
@@ -58,7 +70,7 @@ export const TypeWriterEffect = ({
                 className
             )}
         >
-            <motion.span>{displayText}</motion.span>
+            <motion.span>{currentText}</motion.span>
             <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

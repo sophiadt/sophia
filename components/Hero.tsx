@@ -9,7 +9,7 @@ const Hero = () => {
     { text: "Sophia! ", className: "text-blue-300" },
     { text: "a software developer " },
     { text: "an animator " },
-    { text: "a computer science student " },
+    { text: "a CS student " },
     { text: "a designer " },
     { text: "a gamer :D " },
   ];
