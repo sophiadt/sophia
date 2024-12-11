@@ -50,7 +50,7 @@ const Hero = () => {
 
           <TypeWriterEffect
             prefix="I'm "
-            words={words.map((word) => word.text)}
+            words={ words }
             className="text-left text-[40px] md:text-5xl lg:text-6xl"
             cursorClassName="bg-blue-600"
           />

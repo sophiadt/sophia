@@ -10,7 +10,7 @@ export const TypeWriterEffect = ({
     className,
     cursorClassName,
 }: {
-    words: string[];
+    words: { text: string; className?: string }[]; // Update to include className
     prefix?: string;
     className?: string;
     cursorClassName?: string;
@@ -40,9 +40,10 @@ export const TypeWriterEffect = ({
                 }
             } else {
                 // Type the current word after the prefix
-                if (currentText.length < prefix.length + words[wordIndex].length) {
+                const currentWord = words[wordIndex];
+                if (currentText.length < prefix.length + currentWord.text.length) {
                     timeout = setTimeout(() => {
-                        setCurrentText((prev) => prev + words[wordIndex][prev.length - prefix.length]);
+                        setCurrentText((prev) => prev + currentWord.text[prev.length - prefix.length]);
                     }, typeDelay);
                 } else {
                     timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
@@ -63,6 +64,8 @@ export const TypeWriterEffect = ({
         return () => clearTimeout(timeout);
     }, [currentText, typing, words, wordIndex, prefix, prefixTyped]);
 
+    const wordToDisplay = words[wordIndex];
+
     return (
         <div
             className={cn(
@@ -70,7 +73,12 @@ export const TypeWriterEffect = ({
                 className
             )}
         >
-            <motion.span>{currentText}</motion.span>
+            <motion.span>
+                {prefix}
+                <span className={wordToDisplay.className}>
+                    {currentText.slice(prefix.length)}
+                </span>
+            </motion.span>
             <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
