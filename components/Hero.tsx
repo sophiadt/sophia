@@ -51,7 +51,7 @@ const Hero = () => {
           <TypeWriterEffect
             prefix="I'm "
             words={ words }
-            className="text-left text-[40px] md:text-5xl lg:text-6xl"
+            className="text-left sm:text-base md:text-xl lg:text-3xl xl:text-5xl"
             cursorClassName="bg-blue-600"
           />
 

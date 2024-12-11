@@ -67,18 +67,23 @@ export const TypeWriterEffect = ({
     const wordToDisplay = words[wordIndex];
 
     return (
-        <div
-            className={cn(
-                "text-base sm:text-xl md:text-3xl lg:text-5xl text-left",
-                className
-            )}
-        >
-            <motion.span>
-                {prefix}
-                <span className={wordToDisplay.className}>
-                    {currentText.slice(prefix.length)}
-                </span>
-            </motion.span>
+        <div className={cn("flex space-x-1 my-6", className)}>
+            <motion.div
+                className="overflow-hidden pb-2"
+                initial={{
+                width: "0%",
+                }}
+                whileInView={{
+                width: "fit-content",
+                }}
+            >
+                <motion.span>
+                    {prefix}
+                    <span className={cn("sm:text-base md:text-xl lg:text-3xl xl:text-5xl", wordToDisplay.className)}>
+                        {currentText.slice(prefix.length)}
+                    </span>
+                </motion.span>
+            </motion.div>
             <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
