@@ -89,7 +89,7 @@ export const TypeWriterEffect = ({
                     {/* Style the word differently */}
                     <span
                         className={cn(
-                            "sm:text-base md:text-xl lg:text-3xl xl:text-5xl",
+                            "sm:text-base md:text-xl lg:text-2xl xl:text-4xl",
                             wordToDisplay.className
                         )}
                     >
@@ -102,7 +102,7 @@ export const TypeWriterEffect = ({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
                 className={cn(
-                    "inline-block rounded-sm w-[6px] h-10 md:h-12 lg:h-14 bg-blue-500 align-bottom",
+                    "inline-block rounded-sm w-[6px] h-8 md:h-10 lg:h-12 bg-blue-500 align-bottom",
                     cursorClassName
                 )}
             ></motion.span>

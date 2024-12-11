@@ -36,13 +36,13 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-20">
               {/* Text Section with adjusted margin-top */}
               <div className="flex-2 md:mr-20 lg:mr-30 mt-20 md:mt-30 lg:mt-40">
-                <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
+                <h2 className="text-left text-[40px] md:text-4xl lg:text-5xl">
                   Hi, welcome to my portfolio!
                 </h2>
                 <TypeWriterEffect
                   prefix="I'm "
                   words={words}
-                  className="text-left sm:text-base md:text-xl lg:text-3xl xl:text-5xl"
+                  className="text-left sm:text-base md:text-xl lg:text-2xl xl:text-4xl"
                   cursorClassName="bg-blue-400"
                 />
               </div>
