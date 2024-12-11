@@ -202,9 +202,8 @@ const CollisionMechanism = React.forwardRef<
                 }}
                 className={cn(
                     "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t",
-                    "from-[rgba(229,231,231,0.9)] via-[rgba(229,231,231,0.7)] to-transparent",
-                    "blur-[0.5px]",
-                    beamOptions.className
+                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[0.5px]",
+                    "mix-blend-mode-overlay"
                 )}
             />
             <AnimatePresence>
@@ -242,7 +241,11 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-[rgba(147,180,238,0.9)] to-[rgba(109,119,127,0.6)] blur-sm"
+                className={cn(
+                    "absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r",
+                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-sm",
+                    "mix-blend-mode-overlay"
+                )}
             ></motion.div>
             {spans.map((span) => (
                 <motion.span
@@ -253,10 +256,17 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                         y: span.directionY,
                         opacity: 0,
                     }}
-                    transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-                    className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-[rgba(174,201,229,0.9)] to-[rgba(67,69,69,0.6)] blur-sm"
-                /> 
+                    transition={{
+                        duration: Math.random() * 1.5 + 0.5,
+                        ease: "easeOut",
+                    }}
+                    className={cn(
+                        "absolute h-1 w-1 rounded-full bg-gradient-to-b",
+                        "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-sm",
+                        "mix-blend-mode-overlay"
+                    )}
+                />
             ))}
         </div>
-    );
+    );    
 };
