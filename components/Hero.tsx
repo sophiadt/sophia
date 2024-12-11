@@ -6,12 +6,12 @@ import { TypeWriterEffect } from "./ui/TypeWriterEffect";
 
 const Hero = () => {
   const words = [
-    { text: "a software developer " },
-    // { text: "an animator " },
-    // { text: "a computer science student " },
-    // { text: "a designer " },
-    // { text: "a gamer " },
     { text: "Sophia! ", className: "text-blue-300" },
+    { text: "a software developer " },
+    { text: "an animator " },
+    { text: "a computer science student " },
+    { text: "a designer " },
+    { text: "a gamer 🎮 " },
   ];
 
   return (
@@ -50,7 +50,7 @@ const Hero = () => {
 
           <TypeWriterEffect
             prefix="I'm "
-            words={ words }
+            words={words.map((word) => word.text)}
             className="text-left text-[40px] md:text-5xl lg:text-6xl"
             cursorClassName="bg-blue-600"
           />

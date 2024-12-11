@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export const TypeWriterEffect = ({
     words,
-    prefix = "I'm a",
+    prefix = "I'm ",
     className,
     cursorClassName,
 }: {
@@ -64,7 +64,7 @@ export const TypeWriterEffect = ({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
                 className={cn(
-                    "inline-block rounded-sm w-[6px] h-10 md:h-12 lg:h-14 bg-blue-500 align-middle",
+                    "inline-block rounded-sm w-[6px] h-10 md:h-12 lg:h-14 bg-blue-500 align-bottom",
                     cursorClassName
                 )}
             ></motion.span>
