@@ -55,13 +55,13 @@ const Hero = () => {
             cursorClassName="bg-blue-600"
           />
 
-          <a href="#about">
+          {/* <a href="#about">
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

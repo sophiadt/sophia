@@ -10,15 +10,15 @@ export const TypeWriterEffect = ({
     className,
     cursorClassName,
 }: {
-    words: { text: string; className?: string }[]; // Update to include className
+    words: { text: string; className?: string }[]; // Words with optional className
     prefix?: string;
     className?: string;
     cursorClassName?: string;
 }) => {
-    const [currentText, setCurrentText] = useState(""); // Combine prefix and current word
-    const [typing, setTyping] = useState(true);
-    const [wordIndex, setWordIndex] = useState(0);
-    const [prefixTyped, setPrefixTyped] = useState(false); // Track if prefix is typed
+    const [currentText, setCurrentText] = useState(""); // The full text being typed
+    const [typing, setTyping] = useState(true); // Whether currently typing or deleting
+    const [wordIndex, setWordIndex] = useState(0); // Track the word index
+    const [prefixTyped, setPrefixTyped] = useState(false); // If prefix is fully typed
 
     const typeDelay = 45;
     const deleteDelay = 35;
@@ -28,41 +28,43 @@ export const TypeWriterEffect = ({
         let timeout: NodeJS.Timeout;
 
         if (typing) {
+            // Handle prefix typing first
             if (!prefixTyped) {
-                // Type the prefix first
                 if (currentText.length < prefix.length) {
                     timeout = setTimeout(() => {
-                        setCurrentText((prev) => prev + prefix[prev.length]);
+                        setCurrentText((prev) => prev + prefix[currentText.length]);
                     }, typeDelay);
                 } else {
-                    setPrefixTyped(true); // Once prefix is typed, stop typing it
-                    timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
+                    setPrefixTyped(true); // Prefix is fully typed
                 }
             } else {
-                // Type the current word after the prefix
+                // Handle typing the word
                 const currentWord = words[wordIndex];
-                if (currentText.length < prefix.length + currentWord.text.length) {
+                const fullText = prefix + currentWord.text;
+
+                if (currentText.length < fullText.length) {
                     timeout = setTimeout(() => {
-                        setCurrentText((prev) => prev + currentWord.text[prev.length - prefix.length]);
+                        setCurrentText((prev) => fullText.slice(0, prev.length + 1));
                     }, typeDelay);
                 } else {
                     timeout = setTimeout(() => setTyping(false), pauseBetweenWords);
                 }
             }
         } else {
+            // Handle deleting only the word, not the prefix
             if (currentText.length > prefix.length) {
-                // Only delete the word, not the prefix
                 timeout = setTimeout(() => {
                     setCurrentText((prev) => prev.slice(0, -1));
                 }, deleteDelay);
             } else {
                 setTyping(true);
                 setWordIndex((prev) => (prev + 1) % words.length);
+                setPrefixTyped(false); // Reset prefix for new cycle
             }
         }
 
         return () => clearTimeout(timeout);
-    }, [currentText, typing, words, wordIndex, prefix, prefixTyped]);
+    }, [currentText, typing, prefixTyped, words, wordIndex, prefix]);
 
     const wordToDisplay = words[wordIndex];
 
@@ -71,19 +73,26 @@ export const TypeWriterEffect = ({
             <motion.div
                 className="overflow-hidden pb-2"
                 initial={{
-                width: "0%",
+                    width: "auto", // Initially fit to content
                 }}
                 whileInView={{
-                width: "fit-content",
+                    width: "fit-content", // Adjust dynamically
+                }}
+                transition={{
+                    duration: 2,
+                    ease: "linear",
                 }}
             >
-                <motion.span>
-                    {prefix}
+                <motion.span className="inline-block whitespace-nowrap">
+                    {/* Separate the prefix with default styling */}
+                    <span className="text-inherit">{currentText.slice(0, prefix.length)}</span>
+                    {/* Style the word differently */}
                     <span
-                        className={cn("sm:text-base md:text-xl lg:text-3xl xl:text-5xl", wordToDisplay.className)}
-                        style={{
-                            whiteSpace: "nowrap",
-                        }}>
+                        className={cn(
+                            "sm:text-base md:text-xl lg:text-3xl xl:text-5xl",
+                            wordToDisplay.className
+                        )}
+                    >
                         {currentText.slice(prefix.length)}
                     </span>
                 </motion.span>
