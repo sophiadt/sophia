@@ -31,8 +31,8 @@ const Hero = () => {
                   className="text-left sm:text-base md:text-xl lg:text-4xl xl:text-5xl"
                   cursorClassName="bg-blue-400"
                 />
-                <p>
-                  Just a CS student with a passion for UI/UX design, AI, and software development.
+                <p className="py-7">
+                  Also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
                 </p>
               </div>
 
