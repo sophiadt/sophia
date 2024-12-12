@@ -44,7 +44,7 @@ const config = {
           "blue-900": "#F1F3F4",
         },
         white: {
-          DEFAULT: "#FFFFF",
+          DEFAULT: "#FFFFFF",
           100: "#BEC1DD",
           200: "#C1C2D3",
           "akari-white": "#FDFDFC",
