@@ -53,6 +53,7 @@ const config = {
         },
         blue: {
           "100": "#E4ECFF",
+          "akari": "#4679a3",
         },
         purple: "#CBACF9",
         border: "hsl(var(--border))",

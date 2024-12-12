@@ -3,7 +3,7 @@ import { Rain } from "./ui/Rain";
 
 const Hero = () => {
   const words = [
-    { text: "Sophia!", className: "text-blue-400 font-bold" },
+    { text: "Sophia!", className: "text-blue-akari font-bold" },
     { text: "a software developer" },
     { text: "a web developer" },
     { text: "a computer science student" },
@@ -29,7 +29,7 @@ const Hero = () => {
                   prefix="I'm "
                   words={words}
                   className="text-left sm:text-base md:text-xl lg:text-4xl xl:text-5xl"
-                  cursorClassName="bg-blue-400"
+                  cursorClassName="bg-blue-akari"
                 />
                 <p className="py-7">
                   Also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
