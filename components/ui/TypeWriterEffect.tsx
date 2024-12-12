@@ -89,7 +89,7 @@ export const TypeWriterEffect = ({
                     {/* Style the word differently */}
                     <span
                         className={cn(
-                            "sm:text-base md:text-xl lg:text-2xl xl:text-4xl",
+                            "sm:text-base md:text-xl lg:text-4xl xl:text-5xl",
                             wordToDisplay.className
                         )}
                     >
