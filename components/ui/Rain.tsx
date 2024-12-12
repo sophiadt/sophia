@@ -115,7 +115,7 @@ export const Rain = ({
             {children}
             <div
                 ref={containerRef}
-                className="absolute bottom-0 bg-white-akari-white w-full inset-x-0 pointer-events-none"
+                className="absolute bottom-0 w-full inset-x-0 pointer-events-none"
                 style={{
                     boxShadow:
                         "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
@@ -229,7 +229,7 @@ const CollisionMechanism = React.forwardRef<
                 }}
                 className={cn(
                     "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t",
-                    "from-[rgba(105,124,157,0.8)] to-[rgba(255,255,255,0.9)] blur-[0.5px]",
+                    "from-[rgba(117,140,181,0.8)] to-[rgba(255,255,255,0.9)] blur-[0.5px]",
                     "mix-blend-mode-color-dodge",
                 )}
             />
@@ -269,9 +269,8 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className={cn(
-                    "absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r",
-                    "from-[rgba(150,164,188,0.9)] to-[rgba(133,172,246,0.82)] blur-[1px]",
-                    "mix-blend-mode-color-dodge"
+                    "absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-blue-akari to-transparent blur-sm",
+                    "mix-blend-mode-overlay"
                 )}
             ></motion.div>
             {spans.map((span) => (
@@ -288,9 +287,8 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                         ease: "easeOut",
                     }}
                     className={cn(
-                        "absolute h-1 w-1 rounded-full bg-gradient-to-b",
-                        "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[0.5px]",
-                        "mix-blend-mode-color-dodge"
+                        "absolute h-1 w-1 rounded-full bg-gradient-to-b from-blue-akari to-blue-400",
+                        "mix-blend-mode-overlay"
                     )}
                 />
             ))}
