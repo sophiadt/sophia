@@ -40,7 +40,7 @@ const Hero = () => {
 
               {/* Image Section */}
               <div className="flex-1 flex flex-col items-center md:items-end space-y-4">
-                <img src="/cd.png" alt="CD" className="w-48 h-auto rounded-full" />
+                {/* <img src="/cd.png" alt="CD" className="w-48 h-auto rounded-full" /> */}
                 <CD
                     imageSrc="/cd.png" // Path to the image
                     audioSrc="/akari.mp3" // Path to the audio file
