@@ -229,8 +229,8 @@ const CollisionMechanism = React.forwardRef<
                 }}
                 className={cn(
                     "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t",
-                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[0.5px]",
-                    "mix-blend-mode-overlay"
+                    "from-[rgba(105,124,157,0.8)] to-[rgba(255,255,255,0.9)] blur-[0.5px]",
+                    "mix-blend-mode-color-dodge",
                 )}
             />
             <AnimatePresence>
@@ -270,8 +270,8 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className={cn(
                     "absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r",
-                    "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[1px]",
-                    "mix-blend-mode-overlay"
+                    "from-[rgba(150,164,188,0.9)] to-[rgba(133,172,246,0.82)] blur-[1px]",
+                    "mix-blend-mode-color-dodge"
                 )}
             ></motion.div>
             {spans.map((span) => (
@@ -290,7 +290,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                     className={cn(
                         "absolute h-1 w-1 rounded-full bg-gradient-to-b",
                         "from-[rgba(147,180,238,0.9)] to-[rgba(54,159,246,0.82)] blur-[0.5px]",
-                        "mix-blend-mode-overlay"
+                        "mix-blend-mode-color-dodge"
                     )}
                 />
             ))}

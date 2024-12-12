@@ -1,4 +1,5 @@
 import { TypeWriterEffect } from "./ui/TypeWriterEffect";
+import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 import { Rain } from "./ui/Rain";
 
 const Hero = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="bg-white-akari-white h-screen flex items-center">
+    <BackgroundGradientAnimation className="h-screen w-auto flex items-center">
       <Rain>
         {/* Main content */}
         <div className="flex justify-center relative z-10">
@@ -45,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
       </Rain>
-    </div>
+    </BackgroundGradientAnimation>
   );
 };
 
