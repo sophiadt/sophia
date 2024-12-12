@@ -1,6 +1,7 @@
 import { TypeWriterEffect } from "./ui/TypeWriterEffect";
 import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 import { Rain } from "./ui/Rain";
+import { CD } from "./ui/CD";
 
 const Hero = () => {
   const words = [
@@ -40,7 +41,11 @@ const Hero = () => {
               {/* Image Section */}
               <div className="flex-1 flex flex-col items-center md:items-end space-y-4">
                 <img src="/cd.png" alt="CD" className="w-48 h-auto rounded-full" />
-                <img src="/kitty.png" alt="Kitty" className="w-48 h-auto rounded-lg" />
+                <CD
+                    imageSrc="/cd.png" // Path to the image
+                    audioSrc="/akari.mp3" // Path to the audio file
+                />
+                {/* <img src="/kitty.png" alt="Kitty" className="w-48 h-auto rounded-lg" /> */}
               </div>
             </div>
           </div>
