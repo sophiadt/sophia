@@ -64,6 +64,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Apply Inter font as the default font */
 body {
     font-family: "Inter", sans-serif;
