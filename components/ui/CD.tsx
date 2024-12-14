@@ -46,7 +46,7 @@ export const CD = ({ imageSrc, audioSrc }) => {
                 className="cd"
                 ref={cdRef}
                 onClick={togglePlayPause}
-                style={{ transform: `rotate(${rotation}deg)` }}  // Apply the current rotation
+                style={{ transform: `rotate(${rotation}deg)` }}
             >
                 <img src={imageSrc} alt="CD" className="cd-image" />
             </div>
