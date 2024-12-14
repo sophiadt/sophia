@@ -53,7 +53,7 @@ const Hero = () => {
               {/* Image Section */}
               <div className="flex-1 flex flex-col items-center md:items-end space-y-4">
                 <CD
-                    imageSrc="/cd.png" // Path to the image
+                    imageSrc="/cd.jpg" // Path to the image
                     audioSrc="/akari.mp3" // Path to the audio file
                 />
                 <Kitty />

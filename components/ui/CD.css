@@ -3,19 +3,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
 }
 
 .cd {
-    width: 200px;
-    height: 200px;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 5px rgba(169, 192, 202, 150);
+}
+
+.cd:hover {
+    box-shadow: 0px 0px 10px 5px rgba(169, 192, 202, 200);
 }
 
 .cd-image {
@@ -23,32 +26,4 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.spinning {
-    animation: spin 3s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.play-pause-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.play-pause-button:hover {
-    background-color: #45a049;
 }
