@@ -88,3 +88,10 @@ p,
 .source-serif-4-600 {
     font-weight: 600;
 }
+
+.gradient-text {
+    background: linear-gradient(rgb(0, 65, 206), rgb(121, 201, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}

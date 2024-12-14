@@ -6,7 +6,6 @@ import { Kitty } from "./ui/Kitty";
 
 const Hero = () => {
   const words = [
-    { text: "Sophia!", className: "text-blue-akari font-bold" },
     { text: "a software developer" },
     { text: "a web developer" },
     { text: "a computer science student" },
@@ -24,9 +23,9 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-7">
               {/* Text Section with adjusted margin-top */}
               <div className="flex-2 md:mr-20 lg:mr-30 mt-20 md:mt-30 lg:mt-40">
-                <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
-                  Hi, welcome to my portfolio!
-                </h2>
+              <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
+                Hi, I'm <span className="gradient-text">Sophia</span>
+              </h2>
                 <TypeWriterEffect
                   prefix="I'm "
                   words={words}
