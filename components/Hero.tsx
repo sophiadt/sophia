@@ -34,8 +34,12 @@ const Hero = () => {
                   className="text-left sm:text-base md:text-xl lg:text-4xl xl:text-5xl"
                   cursorClassName="bg-blue-akari"
                 />
-                <p className="py-7">
-                  A computer science student who's also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
+                <p className="py-7 w-[40rem] sm:w-[45rem] md:w-[50rem]">
+                  I'm always up for creating fun hacks and projects based on whatever sparks my interest—whether 
+                  it's diving into the world of <em>Genshin Impact</em>, auto-ing in <em>Honkai Star Rail</em>, 
+                  or solving mysteries like in <em>Ace Attorney</em>. If there's something that catches my attention, you can bet 
+                  I'll find a way to turn it into something exciting. And of course, I'm never without a cup of bubble tea 
+                  to fuel the creative process!
                 </p>
                 <a href="#about">
                   <MagicButton
