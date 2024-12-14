@@ -3,6 +3,8 @@ import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 import { Rain } from "./ui/Rain";
 import { CD } from "./ui/CD";
 import { Kitty } from "./ui/Kitty";
+import MagicButton from "./MagicButton";
+import { HiSparkles } from "react-icons/hi2";
 
 const Hero = () => {
   const words = [
@@ -23,9 +25,9 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-7">
               {/* Text Section with adjusted margin-top */}
               <div className="flex-2 md:mr-20 lg:mr-30 mt-20 md:mt-30 lg:mt-40">
-              <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
-                Hi, I'm <span className="gradient-text">Sophia</span>
-              </h2>
+                <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
+                  Hi, I'm <span className="gradient-text">Sophia</span>
+                </h2>
                 <TypeWriterEffect
                   prefix="I'm "
                   words={words}
@@ -35,6 +37,13 @@ const Hero = () => {
                 <p className="py-7">
                   A computer science student who's also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
                 </p>
+                <a href="#about">
+                  <MagicButton
+                    title="My work"
+                    icon={<HiSparkles />}
+                    position="right"
+                  />
+                </a>
               </div>
 
               {/* Image Section */}
