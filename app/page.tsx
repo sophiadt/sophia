@@ -1,9 +1,6 @@
 import { navItems } from "@/data";
 
-import { FaHome } from "react-icons/fa";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import RecentProjects from "@/components/RecentProjects";
 import TechnicalProjects from "@/components/Technical";
 import GraphicalProjects from "@/components/Graphical";
 import Contact from "@/components/Contact";
@@ -15,9 +12,6 @@ export default function Home() {
       <div className="w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <section id="about">
-          <About />
-        </section>
         <section id="technical">
           <TechnicalProjects />
         </section>
