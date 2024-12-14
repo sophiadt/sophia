@@ -102,9 +102,12 @@ export const TypeWriterEffect = ({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
                 className={cn(
-                    "inline-block rounded-sm w-[6px] h-8 md:h-10 lg:h-12 bg-blue-500 align-bottom",
+                    "inline-block rounded-sm w-[6px] h-8 md:h-10 lg:h-12 align-bottom",
                     cursorClassName
                 )}
+                style={{
+                    background: "linear-gradient(rgb(0, 65, 206), rgb(121, 201, 255))"
+                }}
             ></motion.span>
         </div>
     );
