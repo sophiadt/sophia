@@ -7,7 +7,7 @@ export const Kitty = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const imageCount = 10;
     const imageFolder = "/kitty";
-    const animationSpeed = 150; // 6 fps
+    const animationSpeed = 167; // 6 fps
 
     // Preload all images
     useEffect(() => {

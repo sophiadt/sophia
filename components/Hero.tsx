@@ -30,7 +30,7 @@ const Hero = () => {
                   prefix="I'm "
                   words={words}
                   className="text-left sm:text-base md:text-xl lg:text-4xl xl:text-5xl"
-                  cursorClassName="bg-blue-akari"
+                  cursorClassName="linear-gradient(rgb(0, 65, 206), rgb(121, 201, 255))"
                 />
                 <p className="py-7">
                   A computer science student who's also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
