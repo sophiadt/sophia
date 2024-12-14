@@ -8,7 +8,7 @@ const Hero = () => {
   const words = [
     { text: "a software developer" },
     { text: "a web developer" },
-    { text: "a computer science student" },
+    { text: "an artist" },
     { text: "an AI enthusiast" },
     { text: "a graphic designer" },
     { text: "a gamer :D" },
@@ -33,7 +33,7 @@ const Hero = () => {
                   cursorClassName="bg-blue-akari"
                 />
                 <p className="py-7">
-                  Also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
+                  A computer science student who's also an avid fan of Genshin Impact, Honkai Star Rail, and Ace Attorney!
                 </p>
               </div>
 
