@@ -26,7 +26,7 @@ const Hero = () => {
               {/* Text Section with adjusted margin-top */}
               <div className="flex-2 md:mr-20 lg:mr-30 mt-20 md:mt-30 lg:mt-40">
                 <h2 className="text-left text-[40px] md:text-5xl lg:text-6xl">
-                  Hi, I'm <span className="gradient-text">Sophia</span>
+                  Hi, <span className="gradient-text">Sophia</span> here!
                 </h2>
                 <TypeWriterEffect
                   prefix="I'm "
