@@ -5,14 +5,14 @@ import { useEffect, useRef, useState } from "react";
 export const BackgroundGradientAnimation = ({
     gradientBackgroundStart = "rgb(253, 253, 252)",
     gradientBackgroundEnd = "rgb(221, 223, 224)",
-    firstColor = "173, 199, 215",
-    secondColor = "206, 219, 225",
+    firstColor = "155, 187, 207",
+    secondColor = "185, 219, 235",
     thirdColor = "146, 182, 205",
-    fourthColor = "216, 228, 234",
-    fifthColor = "221, 223, 224",
+    fourthColor = "143, 179, 196",
+    fifthColor = "146, 191, 214",
     pointerColor = "173, 199, 215",
     size = "75%",
-    blendingValue = "soft-light",
+    blendingValue = "multiply",
     children,
     className,
     interactive = true,
@@ -63,7 +63,7 @@ export const BackgroundGradientAnimation = ({
             if (!interactiveRef.current) {
                 return;
             }
-            setCurX(curX + (tgX - curX) / 24);
+            setCurX(curX + (tgX - curX) / 25);
             setCurY(curY + (tgY - curY) / 25);
             interactiveRef.current.style.transform = `translate(${Math.round(
                 curX
