@@ -41,7 +41,7 @@ const Hero = () => {
                   I'll find a way to turn it into something exciting. And of course, I'm never without a cup of bubble tea 
                   to fuel the creative process!
                 </p>
-                <a href="#technical">
+                <a href="#about">
                   <MagicButton
                     title="My work"
                     icon={<HiSparkles />}

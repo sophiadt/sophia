@@ -13,10 +13,12 @@ export default function Home() {
       <div className="w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <Grid />
-        <TechnicalProjects />
-        <GraphicalProjects />
-        <Contact />
+        <div className="max-w-screen-lg lg:max-w-screen-xl sm:px-10 px-5 mx-auto">
+          <Grid />
+          <TechnicalProjects />
+          <GraphicalProjects />
+          <Contact />
+        </div>
       </div>
     </main>
   );
