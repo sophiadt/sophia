@@ -1,6 +1,7 @@
 import { navItems } from "@/data";
 
 import Hero from "@/components/Hero";
+import Grid from "@/components/Grid";
 import TechnicalProjects from "@/components/Technical";
 import GraphicalProjects from "@/components/Graphical";
 import Contact from "@/components/Contact";
@@ -12,15 +13,10 @@ export default function Home() {
       <div className="w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <section id="technical">
-          <TechnicalProjects />
-        </section>
-        <section id="graphical">
-          <GraphicalProjects />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+        <Grid />
+        <TechnicalProjects />
+        <GraphicalProjects />
+        <Contact />
       </div>
     </main>
   );
