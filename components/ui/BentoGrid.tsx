@@ -82,11 +82,13 @@ export const BentoGridItem = ({
                 className
             )}
             style={{
-                //   add these two
-                //   you can generate the color from here https://cssgradient.io/
-                background: "#9DBECF",
-                backgroundColor:
-                    "linear-gradient(90deg, rgb(0, 65, 206) 50%, rgb(121, 201, 255) 100%)",
+                /* From https://css.glass */
+                background: "rgba(157, 190, 207, 0.5)",
+                borderRadius: "16px",
+                boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                backdropFilter: "blur(5.6px)",
+                WebkitBackdropFilter: "blur(5.6px)",
+                border: "1px solid rgba(157, 190, 207, 1)"
             }}
         >
             {/* add img divs */}
