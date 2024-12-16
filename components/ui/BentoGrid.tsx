@@ -129,7 +129,7 @@ export const BentoGridItem = ({
                     )}
                 >
                     {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-                    <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-black-blue z-10">
+                    <div className="font-extralight md:max-w-52 md:text-xs lg:text-base text-sm text-black-blue z-10">
                         {description}
                     </div>
                     {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
@@ -170,7 +170,7 @@ export const BentoGridItem = ({
                         </div>
                     )}
                     {id === 6 && (
-                        <div className="relative">
+                        <div className="relative z-50 inset-0 flex items-center">
                             <div
                                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                                     }`}
@@ -178,20 +178,22 @@ export const BentoGridItem = ({
                                 <Lottie options={defaultOptions} height={200} width={400} />
                             </div>
 
-                            <MagicButton
-                                title={copied ? "Email is Copied!" : "Copy my email address"}
-                                icon={<IoCopyOutline />}
-                                position="left"
-                                handleClick={handleCopy}
-                                otherClasses=""
-                            />
-                            <MagicButton
-                                title={"Connect with me!"}
-                                icon={<TbBubbleTea />}
-                                position="right"
-                                handleClick={() => window.open("https://www.linkedin.com/in/sophiadontranho/", "_blank")}
-                                otherClasses=""
-                            />
+                            <div className="flex space-x-6">
+                                <MagicButton
+                                    title={copied ? "Email copied!" : "Copy email"}
+                                    icon={<IoCopyOutline />}
+                                    position="left"
+                                    handleClick={handleCopy}
+                                    otherClasses=""
+                                />
+                                <MagicButton
+                                    title={"Connect!"}
+                                    icon={<TbBubbleTea />}
+                                    position="right"
+                                    handleClick={() => window.open("https://www.linkedin.com/in/sophiadontranho/", "_blank")}
+                                    otherClasses=""
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
