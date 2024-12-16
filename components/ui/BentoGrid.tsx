@@ -9,8 +9,6 @@ import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
 
-
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
@@ -115,12 +113,6 @@ export const BentoGridItem = ({
                         />
                     )}
                 </div>
-                {/* {id === 6 && (
-                    // add background animation , remove the p tag
-                    <BackgroundGradientAnimation>
-                        <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-                    </BackgroundGradientAnimation>
-                )} */}
 
                 <div
                     className={cn(
@@ -149,21 +141,21 @@ export const BentoGridItem = ({
                                 {leftLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white"
-                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white mix-blend-multiply"
+                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 1))' }}
                                     >
                                         {item}
                                     </span>
                                 ))}
-                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center" style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}></span>
+                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center mix-blend-multiply" style={{ background: 'linear-gradient(rgb(0, 65, 206, 1), rgb(121, 201, 255, 1))' }}></span>
                             </div>
                             <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center" style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}></span>
+                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center mix-blend-multiply" style={{ background: 'linear-gradient(rgb(0, 65, 206, 1), rgb(121, 201, 255, 1))' }}></span>
                                 {rightLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white"
-                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white mix-blend-multiply"
+                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 1), rgb(121, 201, 255, 1))' }}
                                     >
                                         {item}
                                     </span>
