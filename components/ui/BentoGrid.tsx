@@ -166,8 +166,7 @@ export const BentoGridItem = ({
                     {id === 6 && (
                         <div className="relative z-50 inset-0 flex items-center">
                             <div
-                                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                                    }`}
+                                className={`absolute -bottom-5 -left-4 ${copied ? "block" : "block"}`}
                             >
                                 <Lottie options={defaultOptions} height={200} width={400} />
                             </div>
