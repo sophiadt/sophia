@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import { TbBubbleTea } from "react-icons/tb";
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
@@ -91,7 +92,7 @@ export const BentoGridItem = ({
             }}
         >
             {/* add img divs */}
-            <div className={`${id === 6 && "flex justify-center"} h-full`}>
+            <div className={`${id === 6 && "flex"} h-full`}>
                 <div className="w-full h-full absolute">
                     {img && (
                         <img
@@ -114,12 +115,12 @@ export const BentoGridItem = ({
                         />
                     )}
                 </div>
-                {id === 6 && (
+                {/* {id === 6 && (
                     // add background animation , remove the p tag
                     <BackgroundGradientAnimation>
                         <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
                     </BackgroundGradientAnimation>
-                )}
+                )} */}
 
                 <div
                     className={cn(
@@ -148,8 +149,7 @@ export const BentoGridItem = ({
                                 {leftLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
                                     >
                                         {item}
                                     </span>
@@ -161,8 +161,7 @@ export const BentoGridItem = ({
                                 {rightLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
                                     >
                                         {item}
                                     </span>
@@ -171,16 +170,11 @@ export const BentoGridItem = ({
                         </div>
                     )}
                     {id === 6 && (
-                        <div className="mt-5 relative">
-                            {/* button border magic from tailwind css buttons  */}
-                            {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-                            {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-                            {/* add handleCopy() for the copy the text */}
+                        <div className="relative">
                             <div
                                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                                     }`}
                             >
-                                {/* <img src="/confetti.gif" alt="confetti" /> */}
                                 <Lottie options={defaultOptions} height={200} width={400} />
                             </div>
 
@@ -189,6 +183,13 @@ export const BentoGridItem = ({
                                 icon={<IoCopyOutline />}
                                 position="left"
                                 handleClick={handleCopy}
+                                otherClasses=""
+                            />
+                            <MagicButton
+                                title={"Connect with me!"}
+                                icon={<TbBubbleTea />}
+                                position="right"
+                                handleClick={() => window.open("https://www.linkedin.com/in/sophiadontranho/", "_blank")}
                                 otherClasses=""
                             />
                         </div>
