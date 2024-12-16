@@ -92,18 +92,18 @@ export const BentoGridItem = ({
             }}
         >
             {/* add img divs */}
-            <div className={`${id === 6 && "flex"} h-full`}>
+            <div className={`${id === 4 && "flex"} h-full`}>
                 <div className="w-full h-full absolute">
                     {img && (
                         <img
                             src={img}
                             alt={img}
-                            className={cn(imgClassName, "object-cover object-center ")}
+                            className={cn(imgClassName, "object-cover object-center mix-blend-overlay")}
                         />
                     )}
                 </div>
                 <div
-                    className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
+                    className={`absolute right-0 -bottom-5 ${id === 4 && "w-full opacity-80"
                         } `}
                 >
                     {spareImg && (
@@ -149,19 +149,21 @@ export const BentoGridItem = ({
                                 {leftLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white"
+                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}
                                     >
                                         {item}
                                     </span>
                                 ))}
-                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-blue-akari"></span>
+                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center" style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}></span>
                             </div>
                             <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-blue-akari"></span>
+                                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center" style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}></span>
                                 {rightLists.map((item, i) => (
                                     <span
                                         key={i}
-                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-blue-akari text-white"
+                                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center text-white"
+                                        style={{ background: 'linear-gradient(rgb(0, 65, 206, 0.75), rgb(121, 201, 255, 0.75))' }}
                                     >
                                         {item}
                                     </span>

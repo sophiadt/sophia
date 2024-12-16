@@ -39,7 +39,7 @@ export const gridItems = [
     },
     {
         id: 3,
-        title: "My tech stack",
+        title: "my tech stack",
         description: "I constantly try to improve",
         className: "lg:col-span-2 md:col-span-3 md:row-span-3",
         imgClassName: "",
@@ -55,7 +55,7 @@ export const gridItems = [
         imgClassName: "",
         titleClassName: "justify-center",
         img: "/grid.svg",
-        spareImg: "/b4.svg",
+        spareImg: "",
     },
     {
         id: 5,
@@ -73,7 +73,7 @@ export const gridItems = [
         description: "Bubble tea is my go-to drink",
         className: "lg:col-span-3 md:col-span-2 md:row-span-1",
         imgClassName: "",
-        titleClassName: "justify-center",
+        titleClassName: "justify-end",
         img: "",
         spareImg: "",
     },
