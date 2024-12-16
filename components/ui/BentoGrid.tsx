@@ -88,7 +88,7 @@ export const BentoGridItem = ({
                 boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                 backdropFilter: "blur(5.6px)",
                 WebkitBackdropFilter: "blur(5.6px)",
-                border: "1px solid rgba(157, 190, 207, 1)"
+                border: "1px solid rgba(157, 190, 207, 0.5)"
             }}
         >
             {/* add img divs */}
@@ -129,13 +129,13 @@ export const BentoGridItem = ({
                     )}
                 >
                     {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-                    <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+                    <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm to-black-blue-300 z-10">
                         {description}
                     </div>
                     {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
                     {/* remove mb-2 mt-2 */}
                     <div
-                        className={`text-lg lg:text-3xl font-bold z-10`}
+                        className={`text-lg lg:text-3xl font-bold to-black-blue z-10`}
                         style={{ whiteSpace: "pre-wrap" }}
                     >
                         {title}
