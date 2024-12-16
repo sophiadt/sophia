@@ -24,7 +24,7 @@ export const gridItems = [
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "w-full h-full",
         titleClassName: "justify-end",
-        img: "/b1.svg",
+        img: "",
         spareImg: "",
     },
     {

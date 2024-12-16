@@ -129,13 +129,13 @@ export const BentoGridItem = ({
                     )}
                 >
                     {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-                    <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm to-black-blue-300 z-10">
+                    <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-black-blue z-10">
                         {description}
                     </div>
                     {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
                     {/* remove mb-2 mt-2 */}
                     <div
-                        className={`text-lg lg:text-3xl font-bold to-black-blue z-10`}
+                        className={`text-lg lg:text-3xl font-bold text-black-blue-2300 z-10`}
                         style={{ whiteSpace: "pre-wrap" }}
                     >
                         {title}
