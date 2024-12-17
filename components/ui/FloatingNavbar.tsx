@@ -1,23 +1,22 @@
 "use client";
+
 import React, { useState } from "react";
-import {
-    motion,
-    AnimatePresence,
-    useScroll,
-    useMotionValueEvent,
-} from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+// Define the type for each navigation item
+type NavItem = {
+    name: string;
+    link: string;
+    icon?: JSX.Element;  // Optional icon as a JSX element
+};
 
 export const FloatingNav = ({
     navItems,
     className,
 }: {
-    navItems: {
-        name: string;
-        link: string;
-        icon?: JSX.Element;
-    }[];
+    navItems: NavItem[];  // Use the NavItem type for the array
     className?: string;
 }) => {
     const { scrollYProgress } = useScroll();
@@ -28,7 +27,7 @@ export const FloatingNav = ({
     useMotionValueEvent(scrollYProgress, "change", (current) => {
         // Check if current is not undefined and is a number
         if (typeof current === "number") {
-            const direction = current! - scrollYProgress.getPrevious()!;
+            const direction = current - scrollYProgress.getPrevious()!;
 
             if (scrollYProgress.get() < 0.05) {
                 // also set true for the initial state
@@ -71,7 +70,7 @@ export const FloatingNav = ({
                     mixBlendMode: "multiply",
                 }}
             >
-                {navItems.map((navItem: any, idx: number) => (
+                {navItems.map((navItem, idx) => (
                     <Link
                         key={`link=${idx}`}
                         href={navItem.link}
@@ -80,8 +79,6 @@ export const FloatingNav = ({
                         )}
                     >
                         <span className="block sm:hidden">{navItem.icon}</span>
-                        {/* add !cursor-pointer */}
-                        {/* remove hidden sm:block for the mobile responsive */}
                         <span className="!cursor-pointer">{navItem.name}</span>
                     </Link>
                 ))}
