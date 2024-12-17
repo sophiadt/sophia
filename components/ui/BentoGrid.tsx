@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { TbBubbleTea } from "react-icons/tb";
 
@@ -56,6 +56,7 @@ export const BentoGridItem = ({
     const rightLists = ["JS", "NextJS", "SQL"];
 
     const [copied, setCopied] = useState(false);
+    const [isClient, setIsClient] = useState(false); // For detecting client-side rendering
 
     const defaultOptions = {
         loop: copied,
@@ -65,6 +66,10 @@ export const BentoGridItem = ({
             preserveAspectRatio: "xMidYMid slice",
         },
     };
+
+    useEffect(() => {
+        setIsClient(true); // Set to true after the component mounts (client-side)
+    }, []);
 
     const handleCopy = () => {
         const text = "sophiaydt@gmail.com";
@@ -163,7 +168,7 @@ export const BentoGridItem = ({
                             </div>
                         </div>
                     )}
-                    {id === 6 && (
+                    {id === 6 && isClient && (  // Make sure the code runs only on client side
                         <div className="relative z-50 inset-0 flex items-center">
                             <div
                                 className={`absolute -bottom-5 -left-4 ${copied ? "block" : "block"}`}
