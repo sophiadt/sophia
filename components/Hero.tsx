@@ -1,10 +1,17 @@
 import { TypeWriterEffect } from "./ui/TypeWriterEffect";
-import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 import { Rain } from "./ui/Rain";
 import { CD } from "./ui/CD";
-import { Kitty } from "./ui/Kitty";
 import MagicButton from "./MagicButton";
 import { HiSparkles } from "react-icons/hi2";
+
+import dynamic from "next/dynamic";
+
+const Kitty = dynamic(() => import("@/components/ui/Kitty").then(mod => mod.Kitty), {
+  ssr: false
+});
+const BackgroundGradientAnimation = dynamic(() => import("@/components/ui/BackgroundGradientAnimation").then(mod => mod.BackgroundGradientAnimation), {
+  ssr: false
+});
 
 const Hero = () => {
   const words = [
