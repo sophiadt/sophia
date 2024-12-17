@@ -29,16 +29,16 @@ const Hero = () => {
                   Hi, <span className="gradient-text">Sophia</span> here!
                 </h2>
                 <TypeWriterEffect
-                  prefix="I'm "
+                  prefix="I&apos;m "
                   words={words}
                   className="text-left sm:text-base md:text-xl lg:text-4xl xl:text-5xl"
                   cursorClassName="bg-blue-akari"
                 />
                 <p className="py-7 w-[40rem] sm:w-[45rem] md:w-[50rem]">
-                  I'm always up for creating fun hacks and projects based on whatever sparks my interest—whether 
-                  it's diving into the world of <em>Genshin Impact</em>, auto-ing in <em>Honkai Star Rail</em>, 
-                  or solving mysteries like in <em>Ace Attorney</em>. If there's something that catches my attention, you can bet 
-                  I'll find a way to turn it into something exciting. And of course, I'm never without a cup of bubble tea 
+                  I&apos;m always up for creating fun hacks and projects based on whatever sparks my interest—whether 
+                  it&apos;s diving into the world of <em>Genshin Impact</em>, auto-ing in <em>Honkai Star Rail</em>, 
+                  or solving mysteries like in <em>Ace Attorney</em>. If there&apos;s something that catches my attention, you can bet 
+                  I&apos;ll find a way to turn it into something exciting. And of course, I&apos;m never without a cup of bubble tea 
                   to fuel the creative process!
                 </p>
                 <a href="#about">
