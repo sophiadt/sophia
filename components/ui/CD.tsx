@@ -4,10 +4,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import './CD.css';
 
 export const CD = ({ imageSrc, audioSrc }) => {
-    const audioRef = useRef(null);
-    const cdRef = useRef(null);  // Reference to the CD div for rotation control
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    const cdRef = useRef<HTMLDivElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(true);
-    const [rotation, setRotation] = useState(0);  // Store the current rotation angle
+    const [rotation, setRotation] = useState(0);
 
     useEffect(() => {
         if (audioRef.current) {
@@ -16,32 +16,38 @@ export const CD = ({ imageSrc, audioSrc }) => {
     }, []); // Start playing automatically when the component is mounted
 
     useEffect(() => {
-        let rotationInterval;
+        let rotationInterval: NodeJS.Timeout | null = null; // Ensure proper typing for the interval
         if (isPlaying) {
-            // Start a continuous rotation when playing
             rotationInterval = setInterval(() => {
-                setRotation((prev) => (prev + 1) % 360);  // Increment rotation by 1 degree
-            }, 10);  // Update rotation every 10 ms
+                setRotation((prev) => (prev + 1) % 360);
+            }, 10);
         } else {
-            // When paused, clear the rotation interval
-            clearInterval(rotationInterval);
+            if (rotationInterval) {
+                clearInterval(rotationInterval);
+            }
         }
-    
-        return () => clearInterval(rotationInterval);  // Clean up interval on unmount
+
+        return () => {
+            if (rotationInterval) {
+                clearInterval(rotationInterval); // Cleanup interval on unmount
+            }
+        };
     }, [isPlaying]);
 
     const togglePlayPause = () => {
-        if (isPlaying) {
-            audioRef.current && audioRef.current.pause();
-        } else {
-            audioRef.current && audioRef.current.play();
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play();
+            }
         }
-        setIsPlaying(!isPlaying);
+        setIsPlaying(!isPlaying); // Toggle the playing state
     };
 
     return (
         <div className="cd-player-container pb-11">
-            <div 
+            <div
                 className="cd"
                 ref={cdRef}
                 onClick={togglePlayPause}
