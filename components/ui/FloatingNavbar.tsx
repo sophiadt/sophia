@@ -62,7 +62,7 @@ export const FloatingNav = ({
                     className
                 )}
                 style={{
-                    background: "linear-gradient(rgb(0, 65, 206), rgb(121, 201, 255))",
+                    background: "rgba(157, 190, 207, 0.5)",
                     borderRadius: "16px",
                     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                     backdropFilter: "blur(5px)",
@@ -76,7 +76,7 @@ export const FloatingNav = ({
                         key={`link=${idx}`}
                         href={navItem.link}
                         className={cn(
-                            "relative items-center flex space-x-1 text-white hover:text-black-blue-300 mix-blend-normal"
+                            "relative items-center flex space-x-1 text-black hover:text-black-blue-300 mix-blend-normal"
                         )}
                     >
                         <span className="block sm:hidden">{navItem.icon}</span>
