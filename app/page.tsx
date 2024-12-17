@@ -5,7 +5,12 @@ import Grid from "@/components/Grid";
 import TechnicalProjects from "@/components/Technical";
 import GraphicalProjects from "@/components/Graphical";
 import Contact from "@/components/Contact";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
+import dynamic from "next/dynamic";
+
+const FloatingNav = dynamic(() => import("@/components/ui/FloatingNavbar").then(mod => mod.FloatingNav), {
+  ssr: false
+});
 
 export default function Home() {
   return (
