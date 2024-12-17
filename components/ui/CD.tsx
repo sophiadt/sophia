@@ -19,15 +19,14 @@ export const CD = ({ imageSrc, audioSrc }) => {
         let rotationInterval;
         if (isPlaying) {
             // Start a continuous rotation when playing
-            const rotate = () => {
+            rotationInterval = setInterval(() => {
                 setRotation((prev) => (prev + 1) % 360);  // Increment rotation by 1 degree
-            };
-            rotationInterval = setInterval(rotate, 10);  // Update rotation every 10 ms
+            }, 10);  // Update rotation every 10 ms
         } else {
             // When paused, clear the rotation interval
             clearInterval(rotationInterval);
         }
-
+    
         return () => clearInterval(rotationInterval);  // Clean up interval on unmount
     }, [isPlaying]);
 
