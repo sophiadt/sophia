@@ -20,9 +20,9 @@ export default function Home() {
         <Hero />
         <div className="max-w-screen-lg lg:max-w-screen-xl sm:px-10 px-5 mx-auto">
           <Grid />
-          <TechnicalProjects />
+{/*           <TechnicalProjects />
           <GraphicalProjects />
-          <Contact />
+          <Contact /> */}
         </div>
       </div>
     </main>
