@@ -2,9 +2,9 @@ import { navItems } from "@/data";
 
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
-import TechnicalProjects from "@/components/Technical";
-import GraphicalProjects from "@/components/Graphical";
-import Contact from "@/components/Contact";
+// import TechnicalProjects from "@/components/Technical";
+// import GraphicalProjects from "@/components/Graphical";
+// import Contact from "@/components/Contact";
 
 import dynamic from "next/dynamic";
 
